@@ -1,0 +1,129 @@
+22:57:06 **** Incremental Build of configuration Debug for project interrupt ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+../Src/syscalls.c:215:7: error: redefinition of '__env'
+  215 | char *__env[1] = { 0 };
+      |       ^~~~~
+../Src/syscalls.c:39:7: note: previous definition of '__env' with type 'char *[1]'
+   39 | char *__env[1] = { 0 };
+      |       ^~~~~
+../Src/syscalls.c:216:8: error: redefinition of 'environ'
+  216 | char **environ = __env;
+      |        ^~~~~~~
+../Src/syscalls.c:40:8: note: previous definition of 'environ' with type 'char **'
+   40 | char **environ = __env;
+      |        ^~~~~~~
+../Src/syscalls.c:220:6: error: redefinition of 'initialise_monitor_handles'
+  220 | void initialise_monitor_handles()
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/syscalls.c:44:6: note: previous definition of 'initialise_monitor_handles' with type 'void()'
+   44 | void initialise_monitor_handles()
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/syscalls.c:224:5: error: redefinition of '_getpid'
+  224 | int _getpid(void)
+      |     ^~~~~~~
+../Src/syscalls.c:48:5: note: previous definition of '_getpid' with type 'int(void)'
+   48 | int _getpid(void)
+      |     ^~~~~~~
+../Src/syscalls.c:229:5: error: redefinition of '_kill'
+  229 | int _kill(int pid, int sig)
+      |     ^~~~~
+../Src/syscalls.c:53:5: note: previous definition of '_kill' with type 'int(int,  int)'
+   53 | int _kill(int pid, int sig)
+      |     ^~~~~
+../Src/syscalls.c:237:6: error: redefinition of '_exit'
+  237 | void _exit (int status)
+      |      ^~~~~
+../Src/syscalls.c:61:6: note: previous definition of '_exit' with type 'void(int)'
+   61 | void _exit (int status)
+      |      ^~~~~
+../Src/syscalls.c:243:27: error: redefinition of '_read'
+  243 | __attribute__((weak)) int _read(int file, char *ptr, int len)
+      |                           ^~~~~
+../Src/syscalls.c:67:27: note: previous definition of '_read' with type 'int(int,  char *, int)'
+   67 | __attribute__((weak)) int _read(int file, char *ptr, int len)
+      |                           ^~~~~
+../Src/syscalls.c:256:27: error: redefinition of '_write'
+  256 | __attribute__((weak)) int _write(int file, char *ptr, int len)
+      |                           ^~~~~~
+../Src/syscalls.c:80:27: note: previous definition of '_write' with type 'int(int,  char *, int)'
+   80 | __attribute__((weak)) int _write(int file, char *ptr, int len)
+      |                           ^~~~~~
+../Src/syscalls.c:268:5: error: redefinition of '_close'
+  268 | int _close(int file)
+      |     ^~~~~~
+../Src/syscalls.c:92:5: note: previous definition of '_close' with type 'int(int)'
+   92 | int _close(int file)
+      |     ^~~~~~
+../Src/syscalls.c:275:5: error: redefinition of '_fstat'
+  275 | int _fstat(int file, struct stat *st)
+      |     ^~~~~~
+../Src/syscalls.c:99:5: note: previous definition of '_fstat' with type 'int(int,  struct stat *)'
+   99 | int _fstat(int file, struct stat *st)
+      |     ^~~~~~
+../Src/syscalls.c:282:5: error: redefinition of '_isatty'
+  282 | int _isatty(int file)
+      |     ^~~~~~~
+../Src/syscalls.c:106:5: note: previous definition of '_isatty' with type 'int(int)'
+  106 | int _isatty(int file)
+      |     ^~~~~~~
+../Src/syscalls.c:288:5: error: redefinition of '_lseek'
+  288 | int _lseek(int file, int ptr, int dir)
+      |     ^~~~~~
+../Src/syscalls.c:112:5: note: previous definition of '_lseek' with type 'int(int,  int,  int)'
+  112 | int _lseek(int file, int ptr, int dir)
+      |     ^~~~~~
+../Src/syscalls.c:296:5: error: redefinition of '_open'
+  296 | int _open(char *path, int flags, ...)
+      |     ^~~~~
+../Src/syscalls.c:120:5: note: previous definition of '_open' with type 'int(char *, int, ...)'
+  120 | int _open(char *path, int flags, ...)
+      |     ^~~~~
+../Src/syscalls.c:304:5: error: redefinition of '_wait'
+  304 | int _wait(int *status)
+      |     ^~~~~
+../Src/syscalls.c:128:5: note: previous definition of '_wait' with type 'int(int *)'
+  128 | int _wait(int *status)
+      |     ^~~~~
+../Src/syscalls.c:311:5: error: redefinition of '_unlink'
+  311 | int _unlink(char *name)
+      |     ^~~~~~~
+../Src/syscalls.c:135:5: note: previous definition of '_unlink' with type 'int(char *)'
+  135 | int _unlink(char *name)
+      |     ^~~~~~~
+../Src/syscalls.c:318:5: error: redefinition of '_times'
+  318 | int _times(struct tms *buf)
+      |     ^~~~~~
+../Src/syscalls.c:142:5: note: previous definition of '_times' with type 'int(struct tms *)'
+  142 | int _times(struct tms *buf)
+      |     ^~~~~~
+../Src/syscalls.c:324:5: error: redefinition of '_stat'
+  324 | int _stat(char *file, struct stat *st)
+      |     ^~~~~
+../Src/syscalls.c:148:5: note: previous definition of '_stat' with type 'int(char *, struct stat *)'
+  148 | int _stat(char *file, struct stat *st)
+      |     ^~~~~
+../Src/syscalls.c:331:5: error: redefinition of '_link'
+  331 | int _link(char *old, char *new)
+      |     ^~~~~
+../Src/syscalls.c:155:5: note: previous definition of '_link' with type 'int(char *, char *)'
+  155 | int _link(char *old, char *new)
+      |     ^~~~~
+../Src/syscalls.c:339:5: error: redefinition of '_fork'
+  339 | int _fork(void)
+      |     ^~~~~
+../Src/syscalls.c:163:5: note: previous definition of '_fork' with type 'int(void)'
+  163 | int _fork(void)
+      |     ^~~~~
+../Src/syscalls.c:345:5: error: redefinition of '_execve'
+  345 | int _execve(char *name, char **argv, char **env)
+      |     ^~~~~~~
+../Src/syscalls.c:169:5: note: previous definition of '_execve' with type 'int(char *, char **, char **)'
+  169 | int _execve(char *name, char **argv, char **env)
+      |     ^~~~~~~
+make: *** [Src/subdir.mk:25: Src/syscalls.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+22:57:06 Build Failed. 21 errors, 0 warnings. (took 183ms)
+

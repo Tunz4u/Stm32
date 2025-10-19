@@ -1,0 +1,10 @@
+16:44:28 **** Incremental Build of configuration Debug for project svc_math_operation ****
+make -j12 all 
+arm-none-eabi-size  svc_math_operation.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5428	     92	   1900	   7420	   1cfc	svc_math_operation.elf
+Finished building: default.size.stdout
+ 
+
+16:44:28 Build Finished. 0 errors, 0 warnings. (took 136ms)
+

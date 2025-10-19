@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="init_sys"/>
+		<item value="task1_han"/>
+		<item value="get"/>
+		<item value="enable_pro"/>
+		<item value="init_sche"/>
+		<item value="init_s"/>
+		<item value="init_tas"/>
+		<item value="init_sch"/>
+		<item value="task1_handler"/>
+		<item value="task1_"/>
+		<item value="task1"/>
+		<item value="tick_count"/>
+		<item value="update_next_task"/>
+		<item value="update_nex"/>
+		<item value="update_next"/>
+	</list>
+	<list key="replacehistory">
+		<item value="TASK_READY_STATE"/>
+	</list>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<list key="findhistory">
+			<item value=""/>
+		</list>
+	</section>
+</section>

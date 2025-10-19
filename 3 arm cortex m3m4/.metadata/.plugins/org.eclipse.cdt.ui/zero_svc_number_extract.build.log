@@ -1,0 +1,10 @@
+15:31:03 **** Incremental Build of configuration Debug for project zero_svc_number_extract ****
+make -j12 all 
+arm-none-eabi-size  zero_svc_number_extract.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5148	     92	   1900	   7140	   1be4	zero_svc_number_extract.elf
+Finished building: default.size.stdout
+ 
+
+15:31:03 Build Finished. 0 errors, 0 warnings. (took 136ms)
+

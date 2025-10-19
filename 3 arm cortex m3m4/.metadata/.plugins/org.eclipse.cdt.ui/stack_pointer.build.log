@@ -1,0 +1,10 @@
+12:38:08 **** Build of configuration Debug for project stack_pointer ****
+make -j12 all 
+arm-none-eabi-size  stack_pointer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4872	     92	   1900	   6864	   1ad0	stack_pointer.elf
+Finished building: default.size.stdout
+ 
+
+12:38:08 Build Finished. 0 errors, 0 warnings. (took 182ms)
+

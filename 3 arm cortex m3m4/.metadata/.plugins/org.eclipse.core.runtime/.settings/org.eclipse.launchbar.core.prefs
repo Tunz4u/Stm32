@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:svc_number_extract (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:svc_number_extract,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:zero_svc_number_extract,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usart3,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:operation_mode,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stack_pointer,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interrupt_priority,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:exception_entry_exit,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001HelloWorld,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:fault_handling,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:zero_svc_number_extract (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:svc_math_operation,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:t_bit,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:task_schedule
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001HelloWorld/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001HelloWorld/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001helloworld/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001helloworld/activeLaunchTarget=null\:---

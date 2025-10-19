@@ -1,0 +1,187 @@
+/*
+ * 016_RTC_app.c
+ *
+ *  Created on: Oct 15, 2025
+ *      Author: ADMIN
+ */
+
+#include<stdio.h>
+#include <string.h>
+#include "ds3231.h"
+#include "lcd.h"
+
+
+
+
+
+void delay(void)
+{
+	for(uint32_t i = 0 ; i < 5000000/2 ; i ++);
+}
+
+void number_to_string(uint8_t num , char* buf)
+{
+
+	if(num < 10){
+		buf[0] = '0';
+		buf[1] = num+48;
+	}else if(num >= 10 && num < 99)
+	{
+		buf[0] = (num/10) + 48;
+		buf[1]= (num % 10) + 48;
+	}
+}
+//hh:mm:ss
+char* time_to_string(RTC_time_t *rtc_time)
+{
+	static char buf[9];
+
+	buf[2]= ':';
+	buf[5]= ':';
+
+	number_to_string(rtc_time->hours,buf);
+	number_to_string(rtc_time->minutes,&buf[3]);
+	number_to_string(rtc_time->seconds,&buf[6]);
+
+	buf[8] = '\0';
+
+	return buf;
+
+}
+
+// dd/mm/yy
+char *date_to_string(RTC_date_t *rtc_date)
+{
+	static char buf[9];
+
+	buf[2]= '/';
+	buf[5]= '/';
+
+	number_to_string(rtc_date->date,buf);
+	number_to_string(rtc_date->month,&buf[3]);
+	number_to_string(rtc_date->year,&buf[6]);
+
+	buf[8] = '\0';
+
+	return buf;
+
+}
+
+
+char *get_day_of_week(RTC_date_t *rtc_date)
+{
+	char *dayOfWeek []={ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+	return dayOfWeek[rtc_date->day-1];
+
+}
+
+#define SYSTICK_TIM_CLK 16000000UL
+void init_systick_timer(uint32_t tick_hz)
+{
+	uint32_t *pSRVR = (uint32_t*)0xE000E014;
+	uint32_t *pSCSR = (uint32_t*)0xE000E010;
+
+    /* calculation of reload value */
+    uint32_t count_value = (SYSTICK_TIM_CLK/tick_hz)-1;
+
+    //Clear the value of SVR
+    *pSRVR &= ~(0x00FFFFFFFF);
+
+    //load the value in to SVR
+    *pSRVR |= count_value;
+
+    //do some settings
+    *pSCSR |= ( 1 << 1); //Enables SysTick exception request:
+    *pSCSR |= ( 1 << 2);  //Indicates the clock source, processor clock source
+
+    //enable the systick
+    *pSCSR |= ( 1 << 0); //enables the counter
+
+}
+
+
+int main()
+{
+	init_systick_timer(1);
+
+
+	if(DS3231_init())
+	{
+		printf("init fail.\n");
+		while(1);
+	}
+
+//	if(LCD_init())
+//	{
+//		printf("init fail.\n");
+//		while(1);
+//	}
+
+
+	RTC_time_t current_time;
+	RTC_date_t current_date;
+
+	current_time.hours = 14;
+	current_time.minutes = 59;
+	current_time.seconds = 22;
+	current_time.time_format = TIME_FORMAT_24;
+
+	current_date.date =2;
+	current_date.day = SUNDAY;
+	current_date.month = 10;
+	current_date.year = 22;
+
+	ds3231_set_current_time(&current_time);
+	ds3231_set_current_date(&current_date);
+
+
+
+	ds3231_get_current_date(&current_date);
+	ds3231_get_current_time(&current_time);
+
+	printf("Current date is %s < %s >\n",date_to_string(&current_date),get_day_of_week(&current_date));
+
+
+	char *am_pm ={} ;
+	if(current_time.time_format == TIME_FORMAT_24)
+	{
+		printf("Current time is : %s\n",time_to_string(&current_time));
+	}else
+	{
+		am_pm = (current_time.time_format)?"AM":"PM";
+		printf("Current time is : %s %s\n",time_to_string(&current_time),am_pm);
+	}
+
+	printf("Current temperature is : %s\n",ds3231_get_current_temperature());
+
+	while(1);
+
+	return 0;
+
+}
+
+void SysTick_Handler(void)
+{
+	RTC_time_t current_time;
+	RTC_date_t current_date;
+
+	ds3231_get_current_date(&current_date);
+	ds3231_get_current_time(&current_time);
+
+	printf("Current date is %s < %s >\n",date_to_string(&current_date),get_day_of_week(&current_date));
+
+
+	char *am_pm ={} ;
+	if(current_time.time_format == TIME_FORMAT_24)
+	{
+		printf("Current time is : %s\n",time_to_string(&current_time));
+	}else
+	{
+		am_pm = (current_time.time_format)?"AM":"PM";
+		printf("Current time is : %s %s\n",time_to_string(&current_time),am_pm);
+	}
+	printf("Current temperature is : %s\n",ds3231_get_current_temperature());
+
+}
+
+
