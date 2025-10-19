@@ -127,7 +127,7 @@ int main()
 	current_time.time_format = TIME_FORMAT_24;
 
 	current_date.date =25;
-	current_date.day = SUNDAY;
+	current_date.day = MONDAY;
 	current_date.month = 10;
 	current_date.year = 22;
 
