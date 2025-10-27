@@ -40,13 +40,13 @@ void LCD_I2C_GPIO_PinConfig()
 	I2CPins. GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_HIGH;
 
 	//scl
-	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO8;
+	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO6;
 	GPIO_init(&I2CPins);
 
 
 	//sda
 	//Note : since we found a glitch on PB9 , you can also try with PB7
-	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO9;
+	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO7;
 
 	GPIO_init(&I2CPins);
 

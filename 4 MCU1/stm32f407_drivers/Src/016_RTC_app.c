@@ -16,7 +16,7 @@
 
 void delay(void)
 {
-	for(uint32_t i = 0 ; i < 5000000/2 ; i ++);
+	for(uint32_t i = 0 ; i < 500000/2 ; i ++);
 }
 
 void number_to_string(uint8_t num , char* buf)
@@ -111,28 +111,24 @@ int main()
 		while(1);
 	}
 
-//	if(LCD_init())
-//	{
-//		printf("init fail.\n");
-//		while(1);
-//	}
+
 
 
 	RTC_time_t current_time;
 	RTC_date_t current_date;
-
-	current_time.hours = 14;
-	current_time.minutes = 59;
-	current_time.seconds = 22;
-	current_time.time_format = TIME_FORMAT_24;
-
-	current_date.date =25;
-	current_date.day = MONDAY;
-	current_date.month = 10;
-	current_date.year = 22;
-
-	ds3231_set_current_time(&current_time);
-	ds3231_set_current_date(&current_date);
+//
+//	current_time.hours = 14;
+//	current_time.minutes = 59;
+//	current_time.seconds = 22;
+//	current_time.time_format = TIME_FORMAT_24;
+//
+//	current_date.date =25;
+//	current_date.day = MONDAY;
+//	current_date.month = 10;
+//	current_date.year = 22;
+//
+//	ds3231_set_current_time(&current_time);
+//	ds3231_set_current_date(&current_date);
 
 
 

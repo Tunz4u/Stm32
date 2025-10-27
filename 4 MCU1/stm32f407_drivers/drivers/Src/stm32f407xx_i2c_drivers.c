@@ -325,6 +325,7 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Le
 	//3. Send the address of the slave with r/nw bit set to w(0) (total 8 bits )
 	I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
 
+
 	//4. Confirm that address phase is completed by checking the ADDR flag in teh SR1
 	while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_ADDR)   );
 
