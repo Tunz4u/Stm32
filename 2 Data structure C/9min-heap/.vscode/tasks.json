@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build All C Files",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-Command",
+                "gcc (Get-ChildItem -Path ${workspaceFolder} -Filter *.c | ForEach-Object { $_.FullName }) -o ${workspaceFolder}/main.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}

@@ -108,7 +108,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Inc"/>
-						<entry excluding="016_RTC_app.c|010_i2c_master_send.c|015_uart_IT_receive_data.c|014_uart_send_data.c|013_i2c_slave_mode.c|012_i2c_Interrupt_master.c|011_i2c_master_receive.c|009_spi_interrupt.c|008_spi_receivedata_arduino.c|006_gpio_interrupt.c|005_toggle_external_led_external_button.c|004_toggle_led_external_button.c|003_toggle_led_internal_button.c|002toggle_led_opendrain.c|001toggle_led.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
+						<entry excluding="016_RTC_app.c|007_spi_stm32_senddata_arduino.c|010_i2c_master_send.c|015_uart_IT_receive_data.c|013_i2c_slave_mode.c|012_i2c_Interrupt_master.c|011_i2c_master_receive.c|009_spi_interrupt.c|008_spi_receivedata_arduino.c|006_gpio_interrupt.c|005_toggle_external_led_external_button.c|004_toggle_led_external_button.c|003_toggle_led_internal_button.c|002toggle_led_opendrain.c|001toggle_led.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Startup"/>
 						<entry excluding="lcd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="bsp"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="drivers"/>
@@ -184,7 +184,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Inc"/>
-						<entry excluding="016_RTC_app.c|010_i2c_master_send.c|015_uart_IT_receive_data.c|014_uart_send_data.c|013_i2c_slave_mode.c|012_i2c_Interrupt_master.c|011_i2c_master_receive.c|009_spi_interrupt.c|008_spi_receivedata_arduino.c|006_gpio_interrupt.c|005_toggle_external_led_external_button.c|004_toggle_led_external_button.c|003_toggle_led_internal_button.c|002toggle_led_opendrain.c|001toggle_led.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
+						<entry excluding="016_RTC_app.c|007_spi_stm32_senddata_arduino.c|010_i2c_master_send.c|015_uart_IT_receive_data.c|013_i2c_slave_mode.c|012_i2c_Interrupt_master.c|011_i2c_master_receive.c|009_spi_interrupt.c|008_spi_receivedata_arduino.c|006_gpio_interrupt.c|005_toggle_external_led_external_button.c|004_toggle_led_external_button.c|003_toggle_led_internal_button.c|002toggle_led_opendrain.c|001toggle_led.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Startup"/>
 						<entry excluding="lcd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="bsp"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="drivers"/>

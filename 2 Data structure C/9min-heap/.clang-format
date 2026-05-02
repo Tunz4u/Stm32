@@ -1,0 +1,55 @@
+Language: Cpp
+BasedOnStyle: LLVM
+
+# ===========================
+#   INDENTATION RULES
+# ===========================
+IndentWidth: 4               # 1 tab = 4 spaces
+TabWidth: 4
+UseTab: Never                # No TAB character
+IndentCaseLabels: false
+
+# ===========================
+#   LINE LENGTH
+# ===========================
+ColumnLimit: 250
+
+# ===========================
+#   SPACING RULES
+# ===========================
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: true
+AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+
+# ===========================
+#   BRACES STYLE (EMBEDDED)
+# ===========================
+BreakBeforeBraces: Allman    # mở ngoặc xuống dòng (chuẩn C/MISRA)
+
+# ===========================
+#   DECLARATIONS
+# ===========================
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortCaseLabelsOnASingleLine: false
+
+# ===========================
+#   POINTER STYLE
+# ===========================
+PointerAlignment: Left       # int *p;
+
+# ===========================
+#   COMMENTS
+# ===========================
+ReflowComments: false        # không tự format lại comment MISRA
+CommentPragmas: '^'
+
+# ===========================
+#   OTHERS
+# ===========================
+KeepEmptyLinesAtTheStartOfBlocks: true
+SortIncludes: false          # không tự ý reorder include
