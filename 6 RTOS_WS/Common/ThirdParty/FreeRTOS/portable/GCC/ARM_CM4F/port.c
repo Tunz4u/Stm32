@@ -263,7 +263,8 @@ void vPortSVCHandler( void )
         "   ldr r3, pxCurrentTCBConst2      \n" /* Restore the context. */
         "   ldr r1, [r3]                    \n" /* Use pxCurrentTCBConst to get the pxCurrentTCB address. */
         "   ldr r0, [r1]                    \n" /* The first item in pxCurrentTCB is the task top of stack. */
-        "   ldmia r0!, {r4-r11, r14}        \n" /* Pop the registers that are not automatically saved on exception entry and the critical nesting count. */
+        "   ldmia r0!, {r4-r11, r14}        \n" /* Pop the registers that are not automatically saved
+        										on exception entry and the critical nesting count. */
         "   msr psp, r0                     \n" /* Restore the task stack pointer. */
         "   isb                             \n"
         "   mov r0, #0                      \n"
