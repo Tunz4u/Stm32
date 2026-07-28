@@ -28,9 +28,9 @@ void genarate_interrupt()
 	uint32_t *pISER0=(uint32_t *)0XE000E100;
 
 	// enable IRQ3 interrupt
-	*pISER0|=(1<<3);
+	*pISER0	|= (1<<3);
 	// enable IRQ3 interrupt
-	*pSTIR=(3&0x1FF);
+	*pSTIR	= (3&0x1FF);
 
 }
 
@@ -46,6 +46,16 @@ void change_accese_level_unpriv(void)
 
 int main(void)
 {
+#if 0
+	__asm volatile("LDR R1,=#0x20001000");
+	__asm volatile("LDR R2,=#0x20001004");
+	__asm volatile("LDR R0,[R1]");
+	__asm volatile("LDR R1,[R2]");
+	__asm volatile("ADD R0,R0,R1");
+	__asm volatile("STR R0,[R2]");
+#endif
+
+#if 1
 	printf("in thread mode: before interrupt\n");
 
 	change_accese_level_unpriv();
@@ -53,7 +63,10 @@ int main(void)
 	genarate_interrupt ();
 
 	printf("in thread mode: after interrupt\n");
-    /* Loop forever */
+
+
+#endif
+	/* Loop forever */
 	for(;;);
 }
 

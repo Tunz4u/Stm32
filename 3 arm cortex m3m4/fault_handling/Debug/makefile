@@ -59,8 +59,8 @@ all: main-build
 main-build: fault_handling.elf secondary-outputs
 
 # Tool invocations
-fault_handling.elf fault_handling.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\3\ Stm32\fault_handling\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "fault_handling.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded\3 Stm32\fault_handling\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_handling.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+fault_handling.elf fault_handling.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\ Personal\ Project\3\ arm\ cortex\ m3m4\fault_handling\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "fault_handling.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded Personal Project\3 arm cortex m3m4\fault_handling\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="fault_handling.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

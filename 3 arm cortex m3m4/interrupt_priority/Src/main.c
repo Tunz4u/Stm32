@@ -53,16 +53,17 @@ int main(void)
 	//printf("jello\n");
 	//configure priority of peripherals
 	configure_priority_for_irqs(IRQNO_TIMER2,0x80);
-	configure_priority_for_irqs(IRQNO_I2C1,0x70);
+	configure_priority_for_irqs(IRQNO_I2C1,0x80);
 
 	//set pending bit for NVIC pr
 
 	*pNVIC_ISPRBase |=(1<<IRQNO_TIMER2);
+	*pNVIC_ISPRBase |=(1<<IRQNO_I2C1);
 
+	*pNVIC_ISERBase |= (1<<IRQNO_I2C1)|(1<<IRQNO_TIMER2);
 
 	//enable IRQs in NVIC ISER
-	*pNVIC_ISERBase |= (1<<IRQNO_TIMER2);
-	*pNVIC_ISERBase |= (1<<IRQNO_I2C1);
+
 
 
 }
@@ -70,9 +71,9 @@ int main(void)
 void TIM2_IRQHandler(void)
 {
 	printf("TIM2_IRQHandler\n");
-	*pNVIC_ISPRBase |=(1<<IRQNO_I2C1);
+
 	printf("TIM2_IRQHandler after i2c1\n");
-	while(1);
+	//while(1);
 }
 
 void I2C1_EV_IRQHandler(void)

@@ -59,8 +59,8 @@ all: main-build
 main-build: operation_mode.elf secondary-outputs
 
 # Tool invocations
-operation_mode.elf operation_mode.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\3\ Stm32\operation_mode\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "operation_mode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded\3 Stm32\operation_mode\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="operation_mode.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+operation_mode.elf operation_mode.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\ Personal\ Project\3\ arm\ cortex\ m3m4\operation_mode\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "operation_mode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded Personal Project\3 arm cortex m3m4\operation_mode\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="operation_mode.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -59,8 +59,8 @@ all: main-build
 main-build: svc_math_operation.elf secondary-outputs
 
 # Tool invocations
-svc_math_operation.elf svc_math_operation.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\3\ Stm32\svc_math_operation\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "svc_math_operation.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded\3 Stm32\svc_math_operation\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_math_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+svc_math_operation.elf svc_math_operation.map: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\Desktop\Embedded\ Personal\ Project\3\ arm\ cortex\ m3m4\svc_math_operation\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "svc_math_operation.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\ADMIN\Desktop\Embedded Personal Project\3 arm cortex m3m4\svc_math_operation\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="svc_math_operation.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

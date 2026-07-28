@@ -25,25 +25,31 @@
 
 int main(void)
 {
-	//1 enable configurable exception
+//	enable configurable exception
 	uint32_t * pSHCSR=(uint32_t *)0xE000ED24;
 	* pSHCSR |=(1<<16);
 	* pSHCSR |=(1<<17);
 	* pSHCSR |=(1<<18);
 
-	//3 force processor to error
 
-//	uint32_t * pSRAM=(uint32_t *)0x20001000;
+////execute undefined instruction : usage fault
+//	uint32_t * pSRAM=(uint32_t *)0x20001001;
 //	*pSRAM =0xFFFFFFFF;
 //	void (*func_ptr)(void);
 //	func_ptr = (void *)0x20001001;
 //	func_ptr();
 
-	// enable ccr
+
+////switch to arm instruction : usage fault
+//	void (*func_ptr)(void);
+//	func_ptr = (void *)0x20001000;
+//	func_ptr();
+
+
+// enable ccr : usage fault
 	uint32_t *pCCR=(uint32_t *)0xE000ED14;
 	*pCCR |=(1<<4);
-
-	// force to errol
+//force to errol
 	divided(10/0);
 
 	//4 analyze fault

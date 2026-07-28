@@ -1,7 +1,7 @@
 ../Src/main-1.c:26:5:main	1
-../Src/main-1.c:53:5:divided	1
-../Src/main-1.c:59:6:HardFault_Handler	1
-../Src/main-1.c:64:6:MemManage_Handler	1
-../Src/main-1.c:69:6:BusFault_Handler	1
-../Src/main-1.c:75:30:UsageFault_Handler	1
-../Src/main-1.c:82:6:UsageFault_Handler_c	1
+../Src/main-1.c:59:5:divided	1
+../Src/main-1.c:65:6:HardFault_Handler	1
+../Src/main-1.c:70:6:MemManage_Handler	1
+../Src/main-1.c:75:6:BusFault_Handler	1
+../Src/main-1.c:81:30:UsageFault_Handler	1
+../Src/main-1.c:88:6:UsageFault_Handler_c	1

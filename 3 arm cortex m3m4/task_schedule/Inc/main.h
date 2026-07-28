@@ -4,7 +4,6 @@
 
 
 #define MAX_TASKS   5
-
 /* some stack memory calculations */
 #define SIZE_TASK_STACK          1024U
 #define SIZE_SCHED_STACK         1024U
@@ -21,6 +20,11 @@
 #define SCHED_STACK_START        ( (SRAM_END) - (5 * SIZE_TASK_STACK) )
 
 #define TICK_HZ 1000U
+
+#define DELAY_TICK_250MS 	250U
+#define DELAY_TICK_500MS 	500U
+#define DELAY_TICK_1000MS 	1000U
+#define DELAY_TICK_2000MS 	2000U
 
 #define HSI_CLOCK         		16000000U
 #define SYSTICK_TIM_CLK   		HSI_CLOCK

@@ -4,10 +4,6 @@
 
 
 
-void delay(uint32_t count)
-{
-  for(uint32_t i = 0 ; i < count ; i++);
-}
 
 void led_init_all(void)
 {
