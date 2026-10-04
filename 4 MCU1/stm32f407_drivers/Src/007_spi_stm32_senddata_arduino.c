@@ -45,12 +45,18 @@ void SPI2_GPIOInits(void)
 	//Sclk
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO13;
 	GPIO_init(&SPIPins);
+
+
 	//MOSI
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO15;
 	GPIO_init(&SPIPins);
+
+
 	//MISO
 //	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO14;
 //	GPIO_init(&SPIPins);
+
+
 	//NSS
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO12;
 	GPIO_init(&SPIPins);
@@ -68,7 +74,7 @@ void SPI2_Inits(void)
 	SPI2handle.SPI_PinConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
 	SPI2handle.SPI_PinConfig.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV8; //16/8=2mhz
 	SPI2handle.SPI_PinConfig.SPI_CPHA = SPI_CPHA_LOW;
-	SPI2handle.SPI_PinConfig.SPI_CPOL = SPI_CPOL_LOW;
+	SPI2handle.SPI_PinConfig.SPI_CPOL = SPI_CPOL_HIGH;
 	SPI2handle.SPI_PinConfig.SPI_SSM = SPI_SSM_DI;
 	SPI2handle.SPI_PinConfig.SPI_DFF = SPI_DFF_8BITS;
 
@@ -92,7 +98,7 @@ void GPIO_ButtonInit(void)
 
 int main(void)
 {
-	char user_data[]="VO CHI";
+	char user_data[]="Vy cho";
 
 	GPIO_ButtonInit();
 
@@ -102,25 +108,35 @@ int main(void)
 
 	SPI_SSOEConfig(SPI2,ENABLE);
 
-	while(1)
-	{
-		while(!GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO0));
+//	while(1)
+//	{
+//		while(!GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO0));
+//
+//		delay();
+//
+//		SPI_PeripheralControl(SPI2, ENABLE);
+//
+//		uint8_t lengthData = strlen(user_data);
+//		SPI_SendData(SPI2,&lengthData, 1);
+//
+//		SPI_SendData(SPI2,(uint8_t *) user_data, strlen(user_data));
+//
+//		while(SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG));
+//
+//		SPI_PeripheralControl(SPI2, DISABLE);
+//	}
 
-		delay();
+	SPI_PeripheralControl(SPI2, ENABLE);
 
-		SPI_PeripheralControl(SPI2, ENABLE);
+	uint8_t lengthData = strlen(user_data);
 
-		uint8_t lengthData = strlen(user_data);
-		SPI_SendData(SPI2,&lengthData, 1);
+	//SPI_SendData(SPI2,&lengthData, 1);
 
-		SPI_SendData(SPI2,(uint8_t *) user_data, strlen(user_data));
+	SPI_SendData(SPI2,(uint8_t *) user_data, strlen(user_data));
 
-		while(SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG));
+	while(SPI_GetFlagStatus(SPI2, SPI_BUSY_FLAG));
 
-		SPI_PeripheralControl(SPI2, DISABLE);
-	}
-
-
+	SPI_PeripheralControl(SPI2, DISABLE);
 
 	return 0;
 }
